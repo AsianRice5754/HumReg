@@ -1,0 +1,728 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@*change to method post per 
+    https://www.learnrazorpages.com/razor-pages/forms
+    https://www.learnrazorpages.com/razor-pages/ajax/form-post   
+    https://www.thereformedprogrammer.net/asp-net-core-razor-pages-how-to-implement-ajax-requests/
+
+    also adding required anti forgery line to allow ajax in asp.net core
+*@
+
+
+@*dont know if if need*@
+@Html.AntiForgeryToken()
+
+
+<form method="post">
+
+
+    <!--section1-->
+    <h1 class="sectionHeader">HumatadorRegistration</h1>
+
+
+
+
+
+
+
+
+
+    <!--section2-->
+    <h1 class="sectionHeader">Customer Information</h1>
+
+    <div class="form-group">
+        <label asp-for="Registration.Customer" class="labi">Customer:</label>
+        <input type="text" asp-for="Registration.Customer" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerContact" class="labi">Contact:</label>
+        <input type="text" asp-for="Registration.CustomerContact" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerPhone" class="labi">Phone#:</label>
+        <input type="text" asp-for="Registration.CustomerPhone" class="form-control" />   
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerEmail" class="labi">Email:</label>
+        <input type="text" asp-for="Registration.CustomerEmail" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerAddress" class="labi">Address:</label>
+        <input type="text" asp-for="Registration.CustomerAddress" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerUnit" class="labi">Unit:</label>
+        <input type="text" asp-for="Registration.CustomerUnit" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerCity" class="labi">City:</label>
+        <input type="text" asp-for="Registration.CustomerCity" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerState" class="labi">State</label>
+        <select asp-for="Registration.CustomerState" class="form-control">
+            <option>--Select--</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.CustomerZip" class="labi">Zip Code</label>
+        <input type="text" asp-for="Registration.CustomerZip" class="form-control" />
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--section3-->
+    <h1 class="sectionHeader">Service Provider Information</h1>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.Provider" class="labi">Provider:</label>
+        <input type="text" asp-for="Registration.Provider"  class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderPhone" class="labi">Phone#:</label>
+        <input type="text" asp-for="Registration.ProviderPhone" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderEmail" class="labi">Email:</label>
+        <input type="text" asp-for="Registration.ProviderEmail"  class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderAddress" class="labi">Address:</label>
+        <input type="text" asp-for="Registration.ProviderAddress"  class="form-control"/>    
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderUnit" class="labi">Unit:</label>
+        <input type="text" asp-for="Registration.ProviderUnit" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderCity" class="labi">City:</label>
+        <input type="text" asp-for="Registration.ProviderCity" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderState" class="labi">State</label>
+        <select asp-for="Registration.ProviderState" class="form-control">
+            <option>--Select--</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Massachusetts</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.ProviderZip" class="labi">Zip Code</label>
+        <input type="text" asp-for="Registration.ProviderZip" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.Technician" class="labi">Technician:</label>
+        <input type="text" asp-for="Registration.Technician"  class="form-control"/>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.TechnicianPhone" class="labi">Phone#:</label>
+        <input type="text" asp-for="Registration.TechnicianPhone"  class="form-control"/>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.TechnicianEmail" class="labi">Email#:</label>
+        <input type="text" asp-for="Registration.TechnicianEmail" class="form-control" />
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <h1 class="sectionHeader">Equipment Information</h1>
+
+    <div class="form-group">
+        <label asp-for="Registration.Model" class="labi control-label"></label>
+        <input type="text" asp-for="Registration.Model" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="Registration_Serial" class="labi">Serial #:</label>
+        <input type="text" asp-for="Registration.Serial" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.MachineName" class="labi">Machine Name:</label>
+        <input type="text" asp-for="Registration.MachineName" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.ShipDate" class="labi">Ship Date:</label>
+        <input type="text" asp-for="Registration.ShipDate" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Registration.InstallDate" class="labi">Install Date:</label>
+        <input type="text" asp-for="Registration.InstallDate" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.UpsManufacturer" class="labi">UPS Manufacturer:</label>
+        <input type="text" asp-for="Registration.UpsManufacturer" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.UpsModel" class="labi">UPS Model:</label>
+        <input type="text" asp-for="Registration.UpsModel" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Registration.UpsSerial" class="labi">UPS Serial#:</label>
+        <input type="text" asp-for="Registration.UpsSerial" class="form-control" />
+    </div>
+
+
+
+
+
+
+
+
+
+    <div>
+        <button class="btn btn-primary" id="submitBtn" type="submit"><i class="fa-solid fa-paper-plane"></i>Submit to registration@humatador.com</button>
+    </div>
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT JQUERY AJAX JSON  -->
+@section scripts
+    {   
+        <partial name="_ValidationScriptsPartial" />
+        <script type="text/javascript">
+
+
+            //new shit
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* self made rules */
+            //not working
+            //$.validator.addMethod("alphanumeric", function (value, element) {
+            //    return this.optional(element) || /^[\w\-_\s]+$/i.test(value);
+            //}, "No special characters allowed");
+
+            //$.validator.addMethod("valueNotEquals", function (value, element, arg) {
+            //    return arg !== value;
+            //}, "Please select an option.");
+
+
+
+
+
+
+
+
+            /* JQUERY VALIDATION */
+             $(document).ready(function () {
+                 alert("test");
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            //    $("#humatadorReg").validate({
+            //        onkeyup: false,
+            //        onclick: true,
+            //        onsubmit: true,
+            //        onkeyup: false,
+            //        rules: {
+            //            /* section1 */
+            //            "modelInput": {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            serialInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            machineNameInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            shipDateInput: {
+            //                required: true
+            //            },
+            //            versionInput: {
+            //                required: true
+            //            },
+            //            installDateInput: {
+            //                required: true
+            //            },
+
+
+
+
+
+            //            /* section2 */
+            //            customerInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            customerContactInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            customerPhoneInput: {
+            //                required: true,
+            //                digits: true,
+            //                maxlength: 11,
+            //                max: 99999999999
+            //            },
+            //            customerEmailInput: {
+            //                required: true,
+            //                email: true,
+            //                maxlength: 40
+            //            },
+            //            customerAddressInput: {
+            //                required: true,
+            //                alphanumeric: true,
+            //                maxlength: 50
+            //            },
+            //            customerUnitInput: {
+            //                required: true
+            //            },
+            //            customerCityInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            customerStateInput: {
+            //                required: true,
+            //                alphanumeric: true,
+            //                valueNotEquals: "--Select--",
+            //                maxlength: 15
+            //            },
+            //            customerZipInput: {
+            //                required: true,
+            //                alphanumeric: true,
+            //                maxlength: 5,
+            //                max: 99950,
+            //                min: 00501
+            //            },
+
+
+
+
+
+
+            //            /* section3 */
+            //            providerInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            providerContactInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            providerPhoneInput: {
+            //                required: true,
+            //                digits: true,
+            //                maxlength: 11,
+            //                max: 99999999999
+            //            },
+            //            providerEmailInput: {
+            //                alphanumeric: true,
+            //                email: true,
+            //                maxlength: 40
+            //            },
+            //            providerAddressInput: {
+            //                alphanumeric: true,
+            //                digits: true,
+            //                max: 50
+            //            },
+            //            providerUnitInput: {
+            //                required: true
+            //            },
+            //            providerCityInput: {
+            //                required: true,
+            //                alphanumeric: true
+            //            },
+            //            providerStateInput: {
+            //                required: true,
+            //                alphanumeric: true,
+            //                valueNotEquals: "--Select--",
+            //                maxlength: 15
+            //            },
+            //            providerZipInput: {
+            //                alphanumeric: true,
+            //                maxlength: 5,
+            //                max: 99950,
+            //                min: 00501
+            //            },
+
+
+
+
+
+            //            /* section4 */
+
+            //            technicianName: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            technicianPhone: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            technicianEmail: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+
+
+
+
+
+
+            //            /* section5 */
+
+            //            understandInput: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            partsInput: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            installationInput: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            photoInput: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            checklistInput: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            },
+            //            signatureInput: {
+            //                alphanumeric: true,
+            //                required: true,
+            //            }
+
+
+
+
+
+            //        },
+            //        messages: {
+            //            nameInput: "Please enter your name",
+            //            emailInput: "Please enter a valid email address"
+            //        },
+            //        submitHandler: function (form) {
+            //            form.submit();
+            //        }
+            //    });
+            //});
+
+
+
+
+
+
+
+            $("#humatadorReg").on("submit", function () {
+                //making data variable to be passed into the ajax object, more more more
+
+
+            //    if ($("#humatadorReg").valid()) {
+                    var data = {
+                        /* section1 */
+                        "Model": $("#modelInput").val(),
+                        "Serial": $("#serialInput").val(),
+                        "MachineName": $("#machineNameInput").val(),
+                        "ShipDate": $("#shipDateInput").val(),
+                        "Version": $("#versionInput").val(),
+                        "InstallDate": $("#installDateInput").val(),
+
+                        /* section2 */
+                        "Customer": $("#customerInput").val(),
+                        "CustomerContact": $("#customerContactInput").val(),
+                        "CustomerPhone": $("#customerPhoneInput").val(),
+                        "CustomerEmail": $("#customerEmailInput").val(),
+                        "CustomerAddress": $("#customerAddressInput").val(),
+                        "CustomerUnit": $("#customerUnitInput").val(),
+                        "CustomerCity": $("#customerCityInput").val(),
+                        "CustomerState": $("#customerStateInput").val(),
+                        "CustomerZip": $("#customerZipInput").val(),
+
+                        /* section3 */
+                        "Provider": $("#providerInput").val(),
+                        "ProviderContact": $("#providerContactInput").val(),
+                        "ProviderPhone": $("#providerPhoneInput").val(),
+                        "ProviderEmail": $("#providerEmailInput").val(),
+                        "ProviderAddress": $("#providerAddressInput").val(),
+                        "ProviderUnit": $("#providerUnitInput").val(),
+                        "ProviderCity": $("#providerCityInput").val(),
+                        "ProviderState": $("#providerStateInput").val(),
+                        "ProviderZip": $("#providerZipInput").val(),
+
+
+                        /* section4 */
+
+                        "TechnicianName": $("#technicianInput").val(),
+                        "TechnicianPhone": $("#technicianPhoneInput").val(),
+                        "TechnicianEmail": $("#technicianEmailInput").val(),
+
+
+
+                        /* section5 */
+
+                        "Understand": $("#understandInput").val(),
+                        "Parts": $("#partsInput").val(),
+                        "Instalation": $("#installationInput").val(),
+                        "Photo": $("#photoInput").val(),
+                        "Checklist": $("#checklistInput").val(),
+                        "Signature": $("#signatureInput").val()
+
+
+
+                    }
+
+
+                    $.ajax({
+                        type: 'POST',
+                        url: 'Home/index.cshtml.cs',                         
+                        data: JSON.stringify(data),
+                        dataType: 'text',
+                        contentType: 'json'
+                    })
+                        .done(function (data) {
+                            console.log("ajax post complete");
+                            console.log(data);
+                        })
+                        .fail(function (data) {
+                            console.log('fail');
+                            console.log(data);
+                        })
+                }
+            });
+            
+
+
+
+
+
+
+        </script>
+        
+    }
